@@ -2,37 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <style>
+  <title>My Canvas</title>
+  <style type = "text/css">
       canvas {
-        border:1px solid black;
-        width: 80%;
-        height: 80%;
-      }
+        border:1px solid black;}
+      div{
+        height: 80vh;
+        width: 80vw;
+        border: 1px;}
+
   </style>
   </head>
   <body>
-    <canvas id="canvas">
-      An alternative text describing what your canvas displays
+    <div>
+    <canvas id="canvas" width = '100%' height = '100%'>
+      This canvas allows you to draw circles and change the color of those circles.
     </canvas>
+  </div>
     <script>
-    var c = document.getElementById("canvas");
-    var ctx = c.getContext("2d");
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
 
-//
-//     function resizeCanvas() {
-//             canvas.width = window.innerWidth;
-//             canvas.height = window.innerHeight;
-// }
-// window.addEventListener('load', "resizeCanvas", false);
-    color = "red"
-    x = 0
-    y = 0
-    radius = 20
+    var color = "red"
+    var x = 0
+    var y = 0
+    var radius = 20
+    draw();
 
+    fitToContainer(canvas);
+    function fitToContainer(canvas) {
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
 
-
-    // draw();
     function draw(){
       ctx.beginPath();
       ctx.fillStyle = color;
@@ -89,9 +93,9 @@
     })
     window.addEventListener("orientationchange", function(e) {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    radius = 10;
+    radius = 20;
     color = "red";
-
+    draw();
   })
 
 
