@@ -64,14 +64,15 @@
         color = "blue";
         draw();
       }
-      else if (e.keyCode = "103") {
+      else if (e.keyCode == "103") {
         color = "green";
         draw();
       }
       else if (e.keyCode == "32") {
-        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.clearRect(0,0,canvas.width, canvas.height);
         radius = 20;
         color = "red";
+        draw();
       }
 
     })
@@ -99,7 +100,7 @@
   })
 
   function newColor(e){
-    color = e
+    color = e;
     document.colorForm.selected.value = e;
     }
     </script>
