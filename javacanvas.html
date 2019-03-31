@@ -98,13 +98,17 @@
     draw();
   })
 
+  function newColor(e){
+    color = e
+    document.colorForm.selected.value = e;
+    }
+    </script>
 
-// then change the radius size by doing up arrow or down arrows
-    // ctx.beginPath();
-    // ctx.fillStyle="red";
-    // ctx.arc(100,75,50,0,2 * Math.PI);
-    // ctx.stroke();
-    // ctx.fill();
+  <form name="colorForm">
+     <p> Change colors;
+     <input name="colorpicker" type="color" onchange="newColor(colorpicker.value);">
+     </p>
+
     </script>
   </body>
 </html>
